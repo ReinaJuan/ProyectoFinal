@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% extends "AppsProyecto/padre.html" %}
+</head>
+
+<body>
+    {% block titulo_de_pagina %}
+
+    {% endblock %}
+
+    {% block contenido_que_cambia %}
+    <h1>Pagina de espectaculo</h1>
+    <form action="{% url 'espectaculo' %}" method="POST"> {% csrf_token %}
+
+        <table>
+
+            {{ formulario.as_table }}
+        </table>
+
+
+    </form>
+    <div class="card" style="width: 18rem;">
+        <img src="https://img.freepik.com/vector-premium/etiqueta-espectaculo-teatro-espectaculos-luces-festivas-texto-dorado-sobre-fondo-cortinas-rojas_102902-1098.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <a href="https://www.clarin.com/espectaculos/" class="btn btn-primary stretched-link">Ultimas noticias del espectaculo</a>
+        </div>
+    </div>
+    {% endblock %}
+
+
+</body>
+
+</html>

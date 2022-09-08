@@ -11,18 +11,19 @@
 
 <body>
     {% block titulo_de_pagina %}
+    <h1>Pagina de noticias</h1>
 
     {% endblock %}
 
     {% block contenido_que_cambia %}
-    <form action="{% url 'usuario' %}" method="POST"> {% csrf_token %}
+    <form action="{% url 'noticias' %}" method="POST"> {% csrf_token %}
 
         <table>
 
             {{ formulario.as_table }}
         </table>
 
-        <input type="submit" , value="Registrarse">
+        <input type="submit" , value="Cargar">
 
     </form>
 

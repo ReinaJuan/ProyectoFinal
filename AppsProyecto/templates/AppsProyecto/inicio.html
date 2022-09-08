@@ -15,15 +15,17 @@
     {% endblock %}
 
     {% block contenido_que_cambia %}
-    <form action="{% url 'usuario' %}" method="POST"> {% csrf_token %}
+    <h1>Pagina de Inicio</h1>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <form action="{% url 'inicio' %}" method="POST"> {% csrf_token %}
 
         <table>
 
             {{ formulario.as_table }}
         </table>
 
-        <input type="submit" , value="Registrarse">
-
+        
     </form>
 
     {% endblock %}

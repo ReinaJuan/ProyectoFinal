@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from AppsProyecto.forms import Usuarioform,Noticiasform
-from AppsProyecto.models import Usuario,Noticias
+from AppsProyecto.forms import Usuarioform,Noticiasform,Deportesform
+from AppsProyecto.models import Usuario,Noticias,Deportes
 from django.http import HttpResponse
 
 
@@ -37,16 +37,63 @@ def notis(request):
         if form.is_valid():
             info= form.cleaned_data
             tiponoticia= info["tiponoticia"]
-            noticias= Noticias(tiponoticia=tiponoticia)
+            ubicacion= info["ubicacion"]
+            fecha= info["fecha"]
+            
+            noticias= Noticias(tiponoticia=tiponoticia, ubicacion=ubicacion,fecha=fecha)
             noticias.save()
             return render (request, "AppsProyecto/noticias.html", {"mensaje": "Noticia creada"})
+        else:
+            return render (request, "AppsProyecto/noticias.html", {"mensaje": "Error"})
         
  else:
     form= Noticiasform()
     return render(request, "AppsProyecto/noticias.html", {"formulario":form})
 
+#----------------------------------------------------------------------------------------------
 def deportes(request):
-    return render (request, "AppsProyecto/deportes.html")
+
+ if request.method=="POST":
+        form = Deportesform(request.POST)
+        if form.is_valid():
+            info= form.cleaned_data
+            tipodeporte= info["tipodeporte"]
+            ubicacion= info["ubicacion"]
+            fecha= info["fecha"]
+            deportes= Deportes(tipodeporte=tipodeporte, ubicacion=ubicacion, fecha=fecha)
+            deportes.save()
+            return render (request, "AppsProyecto/deportes.html", {"mensaje": "Deporte creado"})
+        else:
+            return render (request, "AppsProyecto/deportes.html", {"mensaje": "Error"})
+        
+ else:
+    form= Deportesform()
+    return render(request, "AppsProyecto/deportes.html", {"formulario":form})
+
+#----------------------------------------------------------------------------------------------------
+def busquedausuario(request):
+    return render(request, "AppsProyecto/busquedausuario.html")
+
+def buscar(request):
+    if request.GET["apellido"]:
+        surname=request.GET["apellido"]
+        usuario=Usuario.objects.filter(apellido=surname)
+        if len(usuario)!=0:
+            return render(request, "AppsProyecto/resultadousuario.html", {"usuario":usuario})
+        else:
+            return render(request, "AppsProyecto/resultadousuario.html", {"mensaje": "No se encuentra usuario"})
+    else:
+        return render(request, "AppsProyecto/busquedausuario.html", {"mensaje": "No enviaste datos"})
+
+
+
+
+
+
+
+
+
+
 
 def espectaculo(request):
     return render (request, "AppsProyecto/espectaculo.html")

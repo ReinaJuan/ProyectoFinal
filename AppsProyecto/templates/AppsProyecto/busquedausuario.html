@@ -11,19 +11,19 @@
 
 <body>
     {% block titulo_de_pagina %}
-    <h1>Pagina de noticias</h1>
 
     {% endblock %}
 
     {% block contenido_que_cambia %}
-    <form action="{% url 'noticias' %}" method="POST"> {% csrf_token %}
 
-        <table>
+    <h1>Busqueda usuario por apellido</h1>
 
-            {{ formulario.as_table }}
-        </table>
+    <form action="{% url 'buscar' %}" method="GET"> {% csrf_token %}
 
-        <input type="submit" , value="Cargar">
+        <p>Apellido:<input type="string" name="apellido", id="apellido"></p>
+        
+        
+        <input type="submit", value="Buscar">
 
     </form>
     <h2 >{{ mensaje }}</h2>

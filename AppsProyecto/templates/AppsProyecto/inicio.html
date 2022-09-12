@@ -16,8 +16,7 @@
 
     {% block contenido_que_cambia %}
     <h1>Pagina de Inicio</h1>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
+    
     <form action="{% url 'inicio' %}" method="POST"> {% csrf_token %}
 
         <table>

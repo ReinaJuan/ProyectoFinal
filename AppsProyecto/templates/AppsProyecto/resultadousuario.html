@@ -11,24 +11,35 @@
 
 <body>
     {% block titulo_de_pagina %}
-    <h1>Pagina de noticias</h1>
 
     {% endblock %}
 
     {% block contenido_que_cambia %}
-    <form action="{% url 'noticias' %}" method="POST"> {% csrf_token %}
+    
+    {% if mensaje %}
 
-        <table>
+<h2>{{ mensaje }}</h2>
 
-            {{ formulario.as_table }}
-        </table>
+{% else %}
 
-        <input type="submit" , value="Cargar">
 
-    </form>
-    <h2 >{{ mensaje }}</h2>
+<h1>Resultados busqueda</h1>
 
-    {% endblock %}
+{% for usuario in usuario %}
+
+<h2>{{ usuario.nombre }}</h2>
+<h2>{{ usuario.apellido }}</h2>
+--
+
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
 
 
 </body>

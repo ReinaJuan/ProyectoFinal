@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('AppsProyecto/', include('AppsProyecto.urls'))
+    path('AppsProyecto/', include('AppsProyecto.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]

@@ -4,11 +4,29 @@
 <head>
     {% load static %}
 
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-47692315-56');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'AppsProyecto\staticfiles\assets\css\style.css' %}">
+    
+
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Heroic Features - Start Bootstrap Template</title>
+    <title>Blog</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -27,6 +45,9 @@
             <li><a class="btn btn-secondary" href="{% url 'deportes' %}">Deportes</a></li>
             <li><a class="btn btn-secondary" href="{% url 'clima' %}">Clima</a></li>
             <li><a class="btn btn-secondary" href="{% url 'noticias' %}">Noticias</a></li>
+            <li><a class="btn btn-secondary" href="{% url 'login' %}">Ingresar</a></li>
+            <li><a class="btn btn-secondary" href="{% url 'register' %}">Registrarse</a></li>
+            <li><a class="btn btn-secondary" href="{% url 'logout' %}">Salir</a></li>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -34,7 +55,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page"
-                            href="{% url 'usuario' %}">Usuario</a></li>
+                            href="{% url 'insertUrl' %}">Publicar</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Sobre nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Contacto</a></li>
 

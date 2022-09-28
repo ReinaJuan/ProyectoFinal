@@ -15,8 +15,8 @@
     {% endblock %}
 
     {% block contenido_que_cambia %}
-    <h1 class="mb-5">LOGIN</h1>
-    <h1>FORMULARIO DE REGISTRO</h1>
+    <h1 class="mb-5">REGISTRARSE</h1>
+    
     <h1>{{ mensaje }}</h1>
     <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
 

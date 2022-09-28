@@ -15,8 +15,8 @@
     {% endblock %}
 
     {% block contenido_que_cambia %}
-    <h1 class="mb-5">LOGIN</h1>
-    <h1>FORMULARIO DE INGRESO</h1>
+    <h1 class="mb-5">INGRESAR</h1>
+    
     <h1>{{ mensaje }}</h1>
     <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
 
@@ -24,6 +24,7 @@
         <button type="submit">INICIAR SESION</button>
 
         {% endblock %}
+
 
         {% block contenido_que_cambia2 %}
 

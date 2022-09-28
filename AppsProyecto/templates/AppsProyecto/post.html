@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
+
 <style type="text/css">
 	img{
 		max-width: 100%;
@@ -73,6 +74,7 @@
 		<span class="tag">{{tag}}</span>
 	{% endfor %}
 	<hr>
+	<h1> {{ post.fecha }} </h1>
 
 	<p>{{post.body|safe}}</p>
 </div>

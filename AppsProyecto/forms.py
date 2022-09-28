@@ -7,14 +7,9 @@ from django.contrib.auth.models import User
 
 
 
-
-class Usuarioform(forms.Form):
-    nombre = forms.CharField(max_length=50)
-    apellido = forms.CharField(max_length=50)
-    email = forms.EmailField()
-
 class UserRegisterForm(UserCreationForm):
     email=forms.EmailField()
+    
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Confirmar contraseña', widget=forms.PasswordInput)
 
@@ -30,19 +25,11 @@ class UserEditForm(UserCreationForm):
     password2 = forms.CharField(label='Confirmar contraseña', widget=forms.PasswordInput)
     first_name=forms.CharField(label='Modificar Nombre')
     last_name=forms.CharField(label='Modificar Apellido')
+    
 
-class Noticiasform(forms.Form):
-      tiponoticia = forms.CharField(max_length=500)
-      ubicacion = forms.CharField(max_length=500)
-      fecha = forms.DateField( )
-
-class Deportesform(forms.Form):
-      tipodeporte=forms.CharField(max_length=50)
-      ubicacion=forms.CharField(max_length=50)
-      fecha = forms.DateField( )
 
 class PostForm(ModelForm):
-
+ 
     class Meta:
         model = Post
         fields = '__all__'
@@ -51,3 +38,5 @@ class PostForm(ModelForm):
             'tags':forms.CheckboxSelectMultiple(),
         }
     
+class AvatarForm(forms.Form):
+    imagen= forms.ImageField(label="Imagen")

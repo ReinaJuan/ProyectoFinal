@@ -37,7 +37,7 @@
             {% csrf_token %}
             {{form.media}}
             {{form|crispy}}
-            <input class="btn btn-primary" type="submit" value="Submit Post">
+            <input class="btn btn-primary" type="submit" value="Subir Post">
 
         </form>
 
@@ -59,7 +59,7 @@
                             <hr>
                             <a href="{%  url 'post' post.id %}">Leer mas</a>
                             <a class="btn btn-sm btn-primary" href="{% url 'editUrl' post.id %}">Editar</a>
-
+                            <a class="btn btn-sm btn-primary" href="{% url 'deleteUrl' post.id %}">Eliminar</a>
                         </div>
                     </div>
                 </div>

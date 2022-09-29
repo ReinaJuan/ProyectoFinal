@@ -24,6 +24,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('AppsProyecto.urls')),
+    path('' ,include('AppMensajes.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

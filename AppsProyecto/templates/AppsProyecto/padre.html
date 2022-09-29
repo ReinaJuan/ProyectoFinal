@@ -60,6 +60,8 @@
                     {% else %}
                     <li><a class="btn btn-secondary" href="{% url 'perfil' %}">Mi Perfil</a></li>
                     <li><a class="btn btn-secondary" href="{% url 'agregaravatar' %}">Modificar Imagen</a></li>
+                    <li><a class="btn btn-secondary" href="{% url 'bandejasalida' %}">Bandeja de Salida</a></li>
+                    <li><a class="btn btn-secondary" href="{% url 'bandejaentrada' %}">Bandeja de Entrada</a></li>
                     <p style="color:white">Hola! {{ user.username }}</p>
                     <img height="40px" src="{{url}}" alt="">
                     <li><a class="btn btn-secondary" href="{% url 'logout' %}">Salir</a></li>
@@ -69,7 +71,7 @@
                             href="{% url 'insertUrl' %}">Publicar</a></li>
 
 
-                    <li class="nav-item"><a class="nav-link" href="#!">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'acercadenosotros' %}">Sobre nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Contacto</a></li>
 
                 </ul>

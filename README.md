@@ -2,7 +2,9 @@
 
 Bienvenidos a nuestro blog de noticias
 
-Encontraran los 3 modelos/formularios en "Usuario" - "Deportes" - "Noticias" y en todos los templates hay herencia de templates valga la redundancia
+Integrantes = Julieta Adamarczuk 
+              Juan Manuel Reina
 
-Para buscar algo en la base de datos hay que ir a la siguiente ruta (una vez corrido el sistema) AppsProyecto/busquedausuario y filtramos por apellido , "Gonzalez" por ejemplo
+Acerca del desarrollo del blog : Fue trabajado en conjunto cada etapa del mismo ya que lo realizamos a traves de llamadas por Meet , desde la generacion del Proyecto y sus apps AppsProyecto-AppMensajes (models , views , templates , forms)
+
 

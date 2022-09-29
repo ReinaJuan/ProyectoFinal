@@ -157,5 +157,7 @@ def agregarAvatar(request):
     return render(request, 'AppsProyecto/agregaravatar.html', {'form':formulario, 'usuario':request.user, "imagen":obtenerAvatar(request)})
 
 
+def acercadenosotros(request):
+    return render(request, "AppsProyecto/acercadenosotros.html")
 
 

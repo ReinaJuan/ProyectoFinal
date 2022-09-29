@@ -19,6 +19,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='AppsProyecto/logout.html'), name='logout'),
     path('perfil/', editarPerfil, name='perfil'),
     path('agregaravatar/', agregarAvatar,name='agregaravatar'),
+    path('acercadenosotros/', acercadenosotros,name='acercadenosotros'),
     
     
     
